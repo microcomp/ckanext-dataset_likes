@@ -1,0 +1,13 @@
+{% ckan_extends %}
+{% block secondary_content %}
+
+  {{ super() }}
+  <div class='likes'>
+  <h3> like/dislike </h3>
+<a href='/dataset/like?user_id={{c.userobj.id}}&dataset_id={{c.pkg.id}}'><i class="fa fa-thumbs-o-up"></i></a>
+<a href='/dataset/dislike?user_id={{c.userobj.id}}&dataset_id={{c.pkg.id}}'><i class="fa fa-thumbs-o-down"></i></a>
+{% set val = h.sum(c.pkg.id) %}
+<br />
+<progress max="100" value="{{val}}"></progress>
+</div>
+{% endblock %}

@@ -25,6 +25,6 @@ setup(
     entry_points='''
         [ckan.plugins]
         # Add plugins here, e.g.
-        # myplugin=ckanext.dataset_likes.plugin:PluginClass
+        dataset_likes=ckanext.dataset_likes.plugin:DatasetLikesPlugin
     ''',
 )

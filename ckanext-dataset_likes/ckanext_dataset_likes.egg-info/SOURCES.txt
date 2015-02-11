@@ -1,6 +1,7 @@
 setup.py
 ckanext/__init__.py
 ckanext/dataset_likes/__init__.py
+ckanext/dataset_likes/plugin.py
 ckanext_dataset_likes.egg-info/PKG-INFO
 ckanext_dataset_likes.egg-info/SOURCES.txt
 ckanext_dataset_likes.egg-info/dependency_links.txt

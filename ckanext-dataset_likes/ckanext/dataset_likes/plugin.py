@@ -22,4 +22,5 @@ class DatasetLikesPlugin(plugins.SingletonPlugin):
         map.connect('dislike_dataset', '/dataset/dislike', action='DisLikeDataset', controller=self.controller)
         return map
     def get_helpers(self):
-    	return {'sum': like.summary}
+    	return {'sum': like.summary,
+                'liked': like.liked}

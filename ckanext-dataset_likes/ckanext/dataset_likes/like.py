@@ -140,7 +140,12 @@ class LikesController(base.BaseController):
                    'user': c.user or c.author, 'auth_user_obj': c.userobj,
                    'for_view': True}
         dataset_id = base.request.params.get('dataset_id','')
-        user_id = context['auth_user_obj'].id
+
+        if context['auth_user_obj']: 
+            user_id = context['auth_user_obj'].id
+        else:
+            base.abort(401, base._('Not authorized to see this page'))
+
         comment_id = base.request.params.get('comment_id','')
         logging.warning('data dict...')
         if len(comment_id) <= 0 or comment_id == None:

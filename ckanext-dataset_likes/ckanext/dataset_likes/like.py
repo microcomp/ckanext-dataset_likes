@@ -37,6 +37,7 @@ def in_like_db(context, data_dict):
         		return {'is':True, 'type':i.type}
 
     return {'is':False, 'type':''}
+    
 def liked(user_id, dataset_id):
     context = {'model': model, 'session': model.Session,
                    'user': c.user or c.author, 'auth_user_obj': c.userobj,

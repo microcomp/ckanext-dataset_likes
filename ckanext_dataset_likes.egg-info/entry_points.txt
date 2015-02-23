@@ -1,5 +1,0 @@
-
-        [ckan.plugins]
-        # Add plugins here, e.g.
-        dataset_likes=ckanext.dataset_likes.plugin:DatasetLikesPlugin
-    

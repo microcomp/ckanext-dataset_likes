@@ -1,0 +1,50 @@
+# Translations template for ckanext-dataset_likes.
+# Copyright (C) 2015 ORGANIZATION
+# This file is distributed under the same license as the ckanext-dataset_likes
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-dataset_likes 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2015-02-23 16:43+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: ckanext/dataset_likes/like.py:148 ckanext/dataset_likes/like.py:162
+#: ckanext/dataset_likes/like.py:189
+msgid "Not authorized to see this page"
+msgstr ""
+
+#: ckanext/dataset_likes/like.py:160 ckanext/dataset_likes/like.py:187
+msgid "Dataset not found"
+msgstr ""
+
+#: ckanext/dataset_likes/templates/package/read.html:46
+msgid "User(s) liked this."
+msgstr ""
+
+#: ckanext/dataset_likes/templates/package/read.html:70
+msgid "Dataset"
+msgstr ""
+
+#: ckanext/dataset_likes/templates/package/read.html:71
+msgid "Activity Stream"
+msgstr ""
+
+#: ckanext/dataset_likes/templates/package/read.html:75
+#: ckanext/dataset_likes/templates/package/read.html:83
+msgid "Like this"
+msgstr ""
+
+#: ckanext/dataset_likes/templates/package/read.html:83
+msgid "Dislike this"
+msgstr ""
+

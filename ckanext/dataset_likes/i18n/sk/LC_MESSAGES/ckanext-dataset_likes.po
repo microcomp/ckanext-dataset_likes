@@ -23,15 +23,15 @@ msgstr ""
 #: ckanext/dataset_likes/like.py:148 ckanext/dataset_likes/like.py:162
 #: ckanext/dataset_likes/like.py:189
 msgid "Not authorized to see this page"
-msgstr "NemÃ¡te povolenie na zobrazenie tejto strÃ¡nky."
+msgstr "Nemáte povolenie na zobrazenie tejto stránky."
 
 #: ckanext/dataset_likes/like.py:160 ckanext/dataset_likes/like.py:187
 msgid "Dataset not found"
-msgstr "Dataset nebol nÃ¡jdenÃ½."
+msgstr "Dataset nebol nájdenı."
 
 #: ckanext/dataset_likes/templates/package/read.html:46
 msgid "User(s) liked this."
-msgstr "PouÅ¾Ã­vateÄ¾om sa to pÃ¡Äi."
+msgstr "Pouívate¾om sa to páèi."
 
 #: ckanext/dataset_likes/templates/package/read.html:70
 msgid "Dataset"
@@ -39,14 +39,14 @@ msgstr "Dataset"
 
 #: ckanext/dataset_likes/templates/package/read.html:71
 msgid "Activity Stream"
-msgstr "PrehÄ¾ad aktivÃ­t"
+msgstr "Preh¾ad aktivít"
 
 #: ckanext/dataset_likes/templates/package/read.html:75
 #: ckanext/dataset_likes/templates/package/read.html:83
 msgid "Like this"
-msgstr "PÃ¡Äi sa mi to"
+msgstr "Páèi sa mi to"
 
 #: ckanext/dataset_likes/templates/package/read.html:83
 msgid "Dislike this"
-msgstr "UÅ¾ sa mi to nepÃ¡Äi"
+msgstr "U sa mi to nepáèi"
 

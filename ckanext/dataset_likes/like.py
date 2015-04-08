@@ -20,7 +20,15 @@ import likes_db
 import logging
 import ckan.logic
 import __builtin__
+def IsRes(id):
+    context = {'model': model, 'session': model.Session,
+               'user': c.user or c.author, 'auth_user_obj': c.userobj,
+               'for_view': True}
+    data_dict = {'related_id': id}
+    resource = model.Session.query(model.Resource) \
+                .filter(model.Resource.id == id).first()
 
+    return resource != None
 def create_dataset_likes_table(context):
     if likes_db.dataset_likes_table is None:
         likes_db.init_db(context['model'])
@@ -32,9 +40,9 @@ def in_like_db(context, data_dict):
         return {'is':False, 'type':''}
     res = likes_db.DatasetLikes.get(**data_dict)
     if res:
-    	for i in res:
-    		if i.user_id == data_dict['user_id']:
-        		return {'is':True, 'type':i.type}
+        for i in res:
+            if i.user_id == data_dict['user_id']:
+                return {'is':True, 'type':i.type}
 
     return {'is':False, 'type':''}
     
@@ -166,7 +174,13 @@ class LikesController(base.BaseController):
         if IsApp(dataset_id) == True:
             return h.redirect_to(controller='ckanext.apps_and_ideas.detail:DetailController', action='detail', id=dataset_id)
         else:
-            return h.redirect_to(controller='package', action='read', id=dataset_id)
+            if IsRes(dataset_id):
+                resource = model.Session.query(model.Resource).filter(model.Resource.id == dataset_id).all()[0].resource_group_id
+                dts_id = model.Session.query(model.ResourceGroup).filter(model.ResourceGroup.id == resource).all()[0].package_id
+                return h.redirect_to(controller='package', action='resource_read', id=dts_id ,resource_id=dataset_id)
+            else:
+                return h.redirect_to(controller='package', action='read', id=dataset_id)
+            
 
     def DisLikeDataset(self):
         context = {'model': model, 'session': model.Session,
@@ -192,5 +206,10 @@ class LikesController(base.BaseController):
         if IsApp(dataset_id) == True:
             return h.redirect_to(controller='ckanext.apps_and_ideas.detail:DetailController', action='detail', id=dataset_id)
         else:
-            return h.redirect_to(controller='package', action='read', id=dataset_id)
+            if IsRes(dataset_id):
+                resource = model.Session.query(model.Resource).filter(model.Resource.id == dataset_id).all()[0].resource_group_id
+                dts_id = model.Session.query(model.ResourceGroup).filter(model.ResourceGroup.id == resource).all()[0].package_id
+                return h.redirect_to(controller='package', action='resource_read', id=dts_id ,resource_id=dataset_id)
+            else:
+                return h.redirect_to(controller='package', action='read', id=dataset_id)
 

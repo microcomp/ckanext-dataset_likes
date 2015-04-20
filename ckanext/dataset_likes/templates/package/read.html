@@ -37,31 +37,13 @@ progress::-moz-progress-value {
 
    </ul>
    		{% set val = h.sum(c.pkg_dict.id) %}
-{% block secondary_content %}
-
 
 {% block package_info %}
     {{super()}}
     <hr>
     <p style="font-size: 1.2em; padding-left: 0.3em"> <b style="color:#bd0a26;">{{val['val']}}</b><b> {{_('User(s) liked this.')}}</b></p>
-  {% endblock %}
-
-  {% block package_organization %}
-   {{super()}}
-  {% endblock %}
-
-  {% block package_social %}
-   {{super()}}
-  {% endblock %}
-
-  {% block package_license %}
-    {{super()}}
-  {% endblock %}
-{% set dataset_extent = h.get_pkg_dict_extra(c.pkg_dict, 'spatial', '') %}
-  {% if dataset_extent %}
-    {% snippet "spatial/snippets/dataset_map_sidebar.html", extent=dataset_extent %}
-  {% endif %}
 {% endblock %}
+
 
  {% block content_primary_nav %}
 	  {{ h.build_nav_icon('dataset_read', _('Dataset'), id=pkg.name) }}
@@ -82,8 +64,4 @@ progress::-moz-progress-value {
 		{%endif%}
 		{%endif%}
 
-{% endblock %}
-{%block primary_content%}
-
-{{super()}}
 {% endblock %}

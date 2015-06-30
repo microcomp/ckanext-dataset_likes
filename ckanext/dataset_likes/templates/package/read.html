@@ -45,23 +45,3 @@ progress::-moz-progress-value {
 {% endblock %}
 
 
- {% block content_primary_nav %}
-	  {{ super() }}
-  	  
-  	  {%if c.userobj.id %}
-		  {%set res = h.liked(c.userobj.id, c.pkg_dict.id) %}
-		  {% if res['is'] == False %}
-		<li ><a href='/dataset/like?dataset_id={{c.pkg_dict.id}}'><i class="fa fa-thumbs-o-up"></i> {{_('Like this')}}</a></li>
-		{%else%}
-			{% if res['type'] == 'like' %}
-				{% set type = 'dislike' %}
-			{%else%}
-				{% set type = 'like' %}		
-			{%endif%}
-			<li ><a href='/dataset/{{type}}?dataset_id={{c.pkg_dict.id}}'>
-				<i class="fa fa-thumbs-o-{% if type == 'like'%}up"></i> {{_('Like this')}}{%else%}down"></i> {{_('Dislike this')}}{%endif%}</a></li>
-			
-		{%endif%}
-		{%endif%}
-
-{% endblock %}

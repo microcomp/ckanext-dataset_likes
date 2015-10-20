@@ -172,7 +172,7 @@ class LikesController(base.BaseController):
         new_like(context, data_dict)
 
         if IsApp(dataset_id) == True:
-            return h.redirect_to(controller='ckanext.apps_and_ideas.detail:DetailController', action='detail', id=dataset_id)
+            return h.redirect_to(controller='ckanext.applications.detail:DetailController', action='detail', id=dataset_id)
         else:
             if IsRes(dataset_id):
                 resource = model.Session.query(model.Resource).filter(model.Resource.id == dataset_id).all()[0].resource_group_id
@@ -204,7 +204,7 @@ class LikesController(base.BaseController):
         new_dis_like(context, data_dict)
         
         if IsApp(dataset_id) == True:
-            return h.redirect_to(controller='ckanext.apps_and_ideas.detail:DetailController', action='detail', id=dataset_id)
+            return h.redirect_to(controller='ckanext.applications.detail:DetailController', action='detail', id=dataset_id)
         else:
             if IsRes(dataset_id):
                 resource = model.Session.query(model.Resource).filter(model.Resource.id == dataset_id).all()[0].resource_group_id

@@ -23,4 +23,5 @@ class DatasetLikesPlugin(plugins.SingletonPlugin):
         return map
     def get_helpers(self):
     	return {'sum': like.summary,
-                'liked': like.liked}
+                'liked': like.liked,
+                'fromUsers':like.fromUsers}

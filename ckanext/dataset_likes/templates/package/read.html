@@ -36,11 +36,24 @@ progress::-moz-progress-value {
 	</li>
 
    </ul>
-   		{% set val = h.sum(c.pkg_dict.id) %}
+   		{#% set val = h.sum(c.pkg_dict.id) %#}
+
+      {% set val =  h.fromUsers(c.pkg_dict.id) %}
+
 
 {% block package_info %}
     {{super()}}
     <hr>
-    <p style="font-size: 1.2em; padding-left: 0.3em"> <b style="color:#bd0a26;">{{val['val']}}</b><b> {{_('User(s) liked this.')}}</b></p>
+    <p style="font-size: 1.2em; padding-left: 0.3em"> 
+        {% if val['val'] > 0 %}
+        <a style="color:#bd0a26; text-decor:none; cursor: pointer;" data-toggle="modal" data-target="#myList"><b>{{val['val']}}</b></a>
+        {%else%}
+        <b style="color:#bd0a26;">{{val['val']}}</b>
+        {%endif%}
+      <b> {{_('User(s) liked this.')}}</b> </p>
+     <!-- Modal -->
+    {% snippet "snippets/modal_snippet.html", usernames=val['uIDs'], modal_id="myList" %}
+      
+
 {% endblock %}
 

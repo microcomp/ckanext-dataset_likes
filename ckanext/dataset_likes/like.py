@@ -132,6 +132,18 @@ def summary(dataset_id):
     users = model.Session.query(model.User).filter(model.User.name != '').all()
     users = len(users)
     return {'val':likes, 'max':users}
+def fromUsers(dataset_id):
+    context = {'model': model, 'session': model.Session,
+                   'user': c.user or c.author, 'auth_user_obj': c.userobj,
+                   'for_view': True}
+    data_dict = {'dataset_id':dataset_id, 'type':"like"}
+    if likes_db.dataset_likes_table is None:
+        likes_db.init_db(context['model'])
+    res = likes_db.DatasetLikes.get(**data_dict)
+
+    uIDs = [x.user_id for x in res]
+    logging.warning(uIDs)
+    return {'uIDs':uIDs, 'val':len(uIDs)}
 def IsApp(id):
     context = {'model': model, 'session': model.Session,
                'user': c.user or c.author, 'auth_user_obj': c.userobj,

@@ -1,0 +1,22 @@
+<div class="modal fade" id="{{modal_id}}" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+      
+        <div class="modal-body">
+          <ul style="list-style: none;">
+            {% for i in usernames %}
+              <li> 
+                  <a href='/user/{{i}}' target="_blank" title="profil: {{h.username(i)}}" style="cursor: pointer;">{{h.username(i)}}</a>
+              </li>
+            {%endfor%}
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close
+          </button>
+        </div>
+      </div>
+  </div>
+</div>

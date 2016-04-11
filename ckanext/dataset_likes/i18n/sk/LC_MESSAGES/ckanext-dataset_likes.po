@@ -31,7 +31,7 @@ msgstr "Dataset nebol nájdený."
 
 #: ckanext/dataset_likes/templates/package/read.html:46
 msgid "User(s) liked this."
-msgstr "Používateľom sa to páči."
+msgstr "Pooužívateľom sa to páči."
 
 #: ckanext/dataset_likes/templates/package/read.html:70
 msgid "Dataset"
